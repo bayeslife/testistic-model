@@ -1,0 +1,42 @@
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: node:10
+
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+    - node_modules/
+
+stages:
+ - install
+ - lint
+ - test
+
+install:
+  stage: install
+  script:
+    - npm run install
+
+lint:
+  stage: lint
+  script:
+    - npm run lint
+
+
+test:
+  stage: test
+  script:
+    - npm test
+
+# Publish tagged versions to npm
+#publish:
+#  stage: deploy
+#  only:
+#    - tags
+#    - triggers
+#  script:
+#    - npm run build
+#    - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
+#    - npm publish
