@@ -13,17 +13,16 @@ before_script:
  - npm install
 
 stages:
- - lint
- - test
+ - build
 
-lint:
-  stage: lint
+build:lint:
+  stage: build
   script:
     - npm run lint
 
 
-test:
-  stage: test
+build:test:
+  stage: build
   script:
     - npm test
 
