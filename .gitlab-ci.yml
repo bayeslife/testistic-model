@@ -17,7 +17,7 @@ stages:
 install:
   stage: install
   script:
-    - npm run install
+    - npm install
 
 lint:
   stage: lint
