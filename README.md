@@ -1,4 +1,4 @@
-# Testability  Model
+# Testistic  Model
 
 This module describes the core Testistic Model.
 
@@ -7,9 +7,10 @@ This module describes the core Testistic Model.
 Firstly it provides a model for TestRun.
 
 TestRun needs to include
+- a project
+- an epic
 - test source
-- test environment
-- test result
+- test status
 - test start end datetime
 
 ## Projects

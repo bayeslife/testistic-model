@@ -5,7 +5,14 @@ import { assert } from 'chai'
 describe('Given a Testistic Core', function () {
 
   var testrun = null
-  testrun = Testistic.TestRun.create(1/* success */, 'G-W-T', 'git://testsource', 'http://localhost:8080')
+  testrun = Testistic.TestRun.createFrom({
+    status: 1/* success */,
+    description: 'G-W-T',
+    project: 'a project',
+    epic: 'a epic',
+    source: 'git://testsource',
+    target: 'http://localhost:8080'
+  })
   var testresult = null
   testresult = Testistic.TestResult.create('success')
 
@@ -18,6 +25,9 @@ describe('Given a Testistic Core', function () {
   describe('When create a TestRun', function () {
     it('Then there is a test instance', function () {
       assert(testrun)
+    })
+    it('Then there is a project', function () {
+      assert(testrun.project)
     })
     it('Then there is a test start datetime', function () {
       assert(testrun.startdate)

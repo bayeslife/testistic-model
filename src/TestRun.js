@@ -25,6 +25,7 @@ function validate (entity) {
 function createFromTemplate () {
   return createFrom({
     status: 1,
+    project: 'project1',
     epic: 'epic',
     source: 'source',
     target: 'target'
@@ -32,10 +33,10 @@ function createFromTemplate () {
 }
 
 function createFrom (entity) {
-  return create(entity.status, entity.description, entity.epic, entity.source, entity.target, entity.startdate, entity.enddate)
+  return create(entity.status, entity.description, entity.project, entity.epic, entity.source, entity.target, entity.startdate, entity.enddate)
 }
 
-function create (teststatus, testdescription, testepic, testsource, testtarget, teststartdate, testenddate) {
+function create (teststatus, testdescription, testproject, testepic, testsource, testtarget, teststartdate, testenddate) {
   return {
     id: uuid(),
     description: testdescription,
@@ -45,6 +46,7 @@ function create (teststatus, testdescription, testepic, testsource, testtarget, 
     enddate: testenddate || Date.now(),
     source: testsource,
     target: testtarget,
+    project: testproject,
     setTestResult: function (testresult) {
       this.testresult = testresult
     },
