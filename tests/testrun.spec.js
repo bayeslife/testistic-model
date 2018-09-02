@@ -2,8 +2,8 @@ import Testistic from '../src/index.js'
 
 import { assert } from 'chai'
 
+// TestRun
 describe('Given valid TestRun', function () {
-
   var testrun = null
   testrun = Testistic.TestRun.createFrom({
     status: 1/* success */,
@@ -17,6 +17,9 @@ describe('Given valid TestRun', function () {
   describe('When create a TestRun', function () {
     it('Then there is a test instance', function () {
       assert(testrun)
+    })
+    it('Then there is an id', function () {
+      assert(testrun.id)
     })
     it('Then there is a project', function () {
       assert(testrun.project)
@@ -33,11 +36,14 @@ describe('Given valid TestRun', function () {
     it('Then there is a test status', function () {
       assert(testrun.status)
     })
+    it('Then the test run is has no validation errors', function () {
+      var errors = Testistic.TestRun.validate(testrun)
+      assert(errors.length === 0)
+    })
   })
 })
 
 describe('Given an invalid TestRun', function () {
-
   var testrun = null
   testrun = Testistic.TestRun.createFrom({
   })
@@ -51,3 +57,4 @@ describe('Given an invalid TestRun', function () {
     })
   })
 })
+

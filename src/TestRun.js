@@ -1,10 +1,8 @@
-import config from './Config.js'
-
 import uuid from 'uuid/v1'
 
 function validate (entity) {
   var errors = []
-  if (entity.status === undefined) {
+  if (entity.status == null || entity.status === undefined) {
     errors.push('Status is required')
   }
   if (!entity.startdate) {
@@ -18,6 +16,9 @@ function validate (entity) {
   }
   if (!entity.epic) {
     errors.push('Epic is required')
+  }
+  if (!entity.project) {
+    errors.push('Project is required')
   }
   return errors
 }
@@ -46,13 +47,13 @@ function create (teststatus, testdescription, testproject, testepic, testsource,
     enddate: testenddate || Date.now(),
     source: testsource,
     target: testtarget,
-    project: testproject,
-    setTestResult: function (testresult) {
-      this.testresult = testresult
-    },
-    getTestResult: function () {
-      return this.testresult
-    }
+    project: testproject
+    // setTestResult: function (testresult) {
+    //   this.testresult = testresult
+    // },
+    // getTestResult: function () {
+    //   return this.testresult
+    // }
   }
 }
 

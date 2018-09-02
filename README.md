@@ -1,6 +1,6 @@
 # Testistic  Model
 
-This module describes the core Testistic Model.
+This module describes the core Testistic model.
 
 
 ## Testruns
@@ -10,8 +10,8 @@ TestRun needs to include
 - a project
 - an epic
 - test source
-- test status
-- test start end datetime
+- test status  (1 means the test ran successfully, 0 means otherwise)
+- test start and end datetime
 
 ## Projects
 

@@ -1,12 +1,14 @@
 {
   "name": "testistic-model",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": "Phil <phil@xceptionale.com>",
   "license": "MIT",
   "description": "Testistic Model functionality",
   "main": "dist/lib.umd.js",
   "unpkg": "dist/lib.umd.js",
-  "file": [ "dist" ],
+  "file": [
+    "dist"
+  ],
   "keywords": [
     "testistic"
   ],
@@ -19,7 +21,7 @@
     "test:watch": "nodemon --watch src --watch tests --exec 'npm test && npm run lint && npm run build'",
     "test": "mocha -r reify -r source-map-support/register tests/*.spec.js",
     "prepublish": "npm run build",
-    "test:browser": "npm run build && opn http://127.0.0.1:8080/tests/ && serve -p 8080"
+    "test:browser": "npm run build && opn http://127.0.0.1:8080/tests/index.html && serve -p 8080"
   },
   "devDependencies": {
     "chai": "^4.1.2",
@@ -39,7 +41,7 @@
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-multi-entry": "^2.0.2",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "serve": "^9.1.0",
+    "serve": "^10.0.0",
     "source-map-support": "^0.5.6"
   },
   "dependencies": {

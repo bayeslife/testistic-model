@@ -1,4 +1,3 @@
-import config from './Config.js'
 import uuid from 'uuid/v1'
 
 function validate (entity) {
@@ -7,7 +6,7 @@ function validate (entity) {
     errors.push('Name is required')
   }
   if (!entity.url) {
-    errors.push('Url is required')
+    errors.push('URL is required')
   }
   return errors
 }
