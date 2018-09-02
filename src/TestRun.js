@@ -4,7 +4,7 @@ import uuid from 'uuid/v1'
 
 function validate (entity) {
   var errors = []
-  if (!entity.status) {
+  if (entity.status === undefined) {
     errors.push('Status is required')
   }
   if (!entity.startdate) {

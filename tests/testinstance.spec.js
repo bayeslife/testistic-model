@@ -2,7 +2,7 @@ import Testistic from '../src/index.js'
 
 import { assert } from 'chai'
 
-describe('Given a Testistic Core', function () {
+describe('Given valid TestRun', function () {
 
   var testrun = null
   testrun = Testistic.TestRun.createFrom({
@@ -12,14 +12,6 @@ describe('Given a Testistic Core', function () {
     epic: 'a epic',
     source: 'git://testsource',
     target: 'http://localhost:8080'
-  })
-  var testresult = null
-  testresult = Testistic.TestResult.create('success')
-
-  describe('When create a TestResult', function () {
-    it('Then there is a test result', function () {
-      assert(testresult.status)
-    })
   })
 
   describe('When create a TestRun', function () {
@@ -38,9 +30,24 @@ describe('Given a Testistic Core', function () {
     it('Then there is a test source', function () {
       assert(testrun.source)
     })
-    it('Then testresult can be set', function () {
-      testrun.setTestResult(testresult)
-      assert(testrun.getTestResult())
+    it('Then there is a test status', function () {
+      assert(testrun.status)
+    })
+  })
+})
+
+describe('Given an invalid TestRun', function () {
+
+  var testrun = null
+  testrun = Testistic.TestRun.createFrom({
+  })
+  var errors = Testistic.TestRun.validate(testrun)
+  describe('When create a TestResult', function () {
+    it('Then there is a test status validation error', function () {
+      assert(errors.includes('Status is required'))
+    })
+    it('Then there is a epic validation error', function () {
+      assert(errors.includes('Epic is required'))
     })
   })
 })
