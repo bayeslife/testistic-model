@@ -48,7 +48,6 @@ function create (teststatus, testdescription, testproject, testepic, testsource,
     enddate: testenddate || Date.now(),
     source: testsource,
     target: testtarget,
-    project: testproject
     // setTestResult: function (testresult) {
     //   this.testresult = testresult
     // },
