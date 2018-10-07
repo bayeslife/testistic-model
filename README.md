@@ -17,4 +17,6 @@ TestRun needs to include
 
 A project has a name and url
 
+## Release Notes
 
+[Release Notes](./RELEASE.md)

@@ -1,24 +1,27 @@
 import uuid from 'uuid/v1'
 
-function validate (entity) {
+function validate (entities) {
   var errors = []
-  if (entity.status == null || entity.status === undefined) {
-    errors.push('Status is required')
-  }
-  if (!entity.startdate) {
-    errors.push('Start date is required')
-  }
-  if (!entity.source) {
-    errors.push('Source is required')
-  }
-  if (!entity.target) {
-    errors.push('Target is required')
-  }
-  if (!entity.epic) {
-    errors.push('Epic is required')
-  }
-  if (!entity.project) {
-    errors.push('Project is required')
+  for(var i=0;i<entities.length;i++){
+    var entity = entities[i]
+    if (entity.status == null || entity.status === undefined) {
+      errors.push('Status is required')
+    }
+    if (!entity.startdate) {
+      errors.push('Start date is required')
+    }
+    if (!entity.source) {
+      errors.push('Source is required')
+    }
+    if (!entity.target) {
+      errors.push('Target is required')
+    }
+    if (!entity.epic) {
+      errors.push('Epic is required')
+    }
+    if (!entity.project) {
+      errors.push('Project is required')
+    }
   }
   return errors
 }

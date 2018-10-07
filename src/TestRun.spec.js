@@ -47,7 +47,7 @@ describe('Given an invalid TestRun', function () {
   var testrun = null
   testrun = Testistic.TestRun.createFrom({
   })
-  var errors = Testistic.TestRun.validate(testrun)
+  var errors = Testistic.TestRun.validate([testrun])
   describe('When create a TestResult', function () {
     it('Then there is a test status validation error', function () {
       assert(errors.includes('Status is required'))
