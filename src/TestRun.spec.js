@@ -57,4 +57,3 @@ describe('Given an invalid TestRun', function () {
     })
   })
 })
-

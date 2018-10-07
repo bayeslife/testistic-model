@@ -2,7 +2,6 @@ import Testistic from '../src/index.js'
 
 import { assert } from 'chai'
 
-
 // Project
 describe('Given valid project', function () {
   var project = null

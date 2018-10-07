@@ -2,7 +2,7 @@ import uuid from 'uuid/v1'
 
 function validate (entities) {
   var errors = []
-  for(var i=0;i<entities.length;i++){
+  for (var i = 0; i < entities.length; i++) {
     var entity = entities[i]
     if (entity.status == null || entity.status === undefined) {
       errors.push('Status is required')
@@ -50,7 +50,7 @@ function create (teststatus, testdescription, testproject, testepic, testsource,
     startdate: teststartdate || Date.now(),
     enddate: testenddate || Date.now(),
     source: testsource,
-    target: testtarget,
+    target: testtarget
     // setTestResult: function (testresult) {
     //   this.testresult = testresult
     // },
