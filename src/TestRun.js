@@ -1,9 +1,13 @@
 import uuid from 'uuid/v1'
 
+import Debug from 'debug'
+const debug = Debug('testistic-model')
+
 function validate (entities) {
   var errors = []
   for (var i = 0; i < entities.length; i++) {
     var entity = entities[i]
+    debug(entity)
     if (entity.status == null || entity.status === undefined) {
       errors.push('Status is required')
     }
