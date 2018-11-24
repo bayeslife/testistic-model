@@ -2,7 +2,6 @@
 
 This module describes the core Testistic model.
 
-
 ## Testruns
 Firstly it provides a model for TestRun.
 
