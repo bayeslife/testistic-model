@@ -3,7 +3,7 @@
   "version": "1.1.3",
   "author": "Phil <phil@xceptionale.com>",
   "license": "MIT",
-  "description": "Testistic Model functionality",
+  "description": "A model which represents the core Testistic concepts",
   "main": "dist/lib.umd.js",
   "unpkg": "dist/lib.umd.js",
   "file": [
